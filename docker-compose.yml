@@ -4,12 +4,12 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8282:80"
+      - "8080:80"  # Map host port 8080 to container port 80
     volumes:
-      - ./static:/usr/share/nginx/html
+      - ./index.html:/usr/share/nginx/html/index.html  # Mount the local 'index.html' to replace the default one
     networks:
-      - azizi-bridge
+      - nginx-network
 
 networks:
-  azizi-bridge:
+  nginx-network:
     driver: bridge
