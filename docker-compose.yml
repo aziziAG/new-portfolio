@@ -1,14 +1,15 @@
 version: '3'
 
 services:
-  web:
+  nginx:
     image: nginx:latest
     ports:
-      - "8282:8282"
+      - "8083:80"
     volumes:
       - ./static:/usr/share/nginx/html
     networks:
-      - mynetwork
+      - azizi-bridge
 
 networks:
-  mynetwork:
+  azizi-bridge:
+    driver: bridge
