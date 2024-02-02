@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8282:8282"
+    volumes:
+      - ./static:/usr/share/nginx/html
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
