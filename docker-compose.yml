@@ -4,7 +4,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "8080:80"  # Map host port 8080 to container port 80
+      - "8087:80"  # Map host port 8080 to container port 80
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html  # Mount the local 'index.html' to replace the default one
     networks:
